@@ -1,0 +1,16 @@
+/* GOOGLE FONTS */
+@import url("https://fonts.googleapis.com/css2?.family=Poppins:wght@400;500")
+
+/* VARIABLES CSS */
+--header-height: 3rem;
+--nav-width: 324px;
+
+/* FONT WEIGHT */
+--font-medium: 500;
+--font-semi-bold: 600;
+--font-bold: 700;
+
+/* COLORS */
+--first-color: #273c75;
+--second-color: white;
+--third-color: #ee5a24;
