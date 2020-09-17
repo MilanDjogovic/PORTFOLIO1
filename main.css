@@ -116,3 +116,40 @@ nav {
 .toggle .line3 {
     transform: rotate(45deg) translate(-5px,-6px);
 }
+
+/*Footer*/
+
+footer {
+    height: 6vh;
+    background-color: #34495e;
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer .author {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    padding-left: 15px;
+}
+
+footer .author p {
+    font-size: 3vh;
+}
+
+footer .social{
+    display: flex;
+    width: 30%;
+    justify-content: space-between;
+    padding-right: 15px;
+    size: 30px;
+}
+
+
+footer .social div i{
+    color: white;
+}
