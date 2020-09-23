@@ -22,3 +22,19 @@ const navSlide = () => {
 };
 
 navSlide();
+
+
+
+const navClose = () => {
+    const burger = document.querySelector(".burger");
+    const nav = document.querySelector(".nav-links");
+    const navLinks = document.querySelectorAll(".nav-links li");
+
+    navLinks.addEventListener("click", () => {
+        burger.classList.toggle('nav-active');
+    });
+
+    
+};
+
+navClose();
