@@ -1,0 +1,445 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/*HEADER*/
+.header {
+  position: fixed;
+  background-color: #34495e;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  z-index: 1;
+}
+
+.header a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 2rem;
+}
+
+.header > a {
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.header a span {
+  color: orangered;
+}
+
+.menu-items {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.menu-items li a {
+  font-size: 1.5rem;
+  padding: 0.5em 1em;
+  transition: background 0.3s ease-in-out;
+}
+
+.menu-items li a:hover {
+  background-color: whitesmoke;
+  color: orangered;
+  border-radius: 20px;
+}
+
+/*NAV MENU BUTTON*/
+.menu-btn {
+  position: relative;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.menu-btn__lines,
+.menu-btn__lines::before,
+.menu-btn__lines::after {
+  width: 1.5rem;
+  height: 0.1rem;
+  background-color: whitesmoke;
+  transition: all 0.5s ease-in-out;
+}
+
+.menu-btn__lines::before,
+.menu-btn__lines::after {
+  content: "";
+  position: absolute;
+}
+
+.menu-btn__lines::before {
+  transform: translateY(-0.5rem);
+}
+
+.menu-btn__lines::after {
+  transform: translateY(0.5rem);
+}
+
+/*ANIMATION*/
+.menu-btn.open .menu-btn__lines {
+  transform: translateX(2rem);
+  background-color: transparent;
+}
+
+.menu-btn.open .menu-btn__lines::before {
+  transform: rotate(45deg) translate(-1.5rem, 1.5rem);
+  background-color: whitesmoke;
+}
+
+.menu-btn.open .menu-btn__lines::after {
+  transform: rotate(-45deg) translate(-1.5rem, -1.5rem);
+  background-color: whitesmoke;
+}
+/*ANIMATION*/
+/*NAV MENU BUTTON*/
+
+/*HEADER*/
+
+/*SECTION*/
+.section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-section {
+  background-color: #34495e;
+  background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%232c3e50' fill-opacity='1' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.page-col {
+  padding: clamp(1rem, 8vw, 5rem);
+  max-width: 50%;
+}
+
+.section h1 {
+  font-size: clamp(35px, 4vw, 100px);
+  color: whitesmoke;
+  font-weight: 600;
+}
+
+.section h1 span {
+  color: orangered;
+}
+
+.section h2 {
+  font-size: clamp(20px, 2vw, 50px);
+  color: whitesmoke;
+  font-weight: 300;
+}
+
+.section .button {
+  color: whitesmoke;
+  background-color: orangered;
+  border: 1px solid white;
+  padding: 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  font-size: 15px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.section .button:hover {
+  color: orangered;
+  background-color: whitesmoke;
+  border: 1px solid orangered;
+}
+
+@media screen and (max-width: 768px) {
+  #home {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header a {
+    font-size: 1.5rem;
+  }
+
+  .page-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+  }
+
+  .page-col h1 {
+    max-width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  .page-col img {
+    height: 190px;
+    width: 190px;
+  }
+
+  .education_list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .education_list div {
+    justify-content: space-around;
+    margin: 0 10px;
+  }
+
+  .education_list_course h3 {
+    margin-top: 10px;
+  }
+
+  .menu-btn {
+    display: flex;
+  }
+
+  .menu-items {
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 93vh;
+    background-color: #34495e;
+    transform: translateX(100vw);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .menu-items.open {
+    transform: translateX(0);
+  }
+
+  .menu-items li {
+    width: 100vw;
+  }
+
+  .menu-items li a {
+    font-size: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .footer-social a i {
+    /**/
+    font-size: 25px;
+  }
+
+  #contact .page {
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      "title"
+      "location"
+      "mail"
+      "phone"
+      "github_social"
+      "gitlab_social"
+      "linkedin_social";
+      row-gap: 10px;
+      justify-content: center;
+      align-content: center;
+      column-gap: 20px;
+  }
+
+
+  #contact div a i {
+    font-size: 25px;
+  }
+
+  #contact div > p {
+    font-size: 15px;
+  }
+}
+
+/*SECTION*/
+
+/*FOOTER*/
+.footer {
+  display: flex;
+  color: whitesmoke;
+  background-color: #34495e;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem 2rem;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.footer > a {
+  text-decoration: none;
+  color: whitesmoke;
+  justify-content: center;
+  font-size: clamp(20px, 2vw, 40px);
+}
+
+.footer-social {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+}
+
+.footer-social a {
+  text-decoration: none;
+  color: whitesmoke;
+  margin-left: 15px;
+}
+
+.footer-social a:hover {
+  color: orangered;
+}
+/*FOOTER*/
+
+/*ABOUT ME*/
+#about_me {
+  background-color: #34495e;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%232c3e50' fill-opacity='0.81' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+#about_me .page {
+  width: 100%;
+  text-align: center;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  color: whitesmoke;
+  justify-content: space-evenly;
+}
+
+.page > h1 {
+  color: orangered;
+  text-transform: uppercase;
+}
+
+.title {
+  padding-bottom: 40px;
+}
+
+.page > p {
+  margin: 0px 20px;
+  font-size: clamp(15px, 1.5vw, 30px);
+}
+
+.education_title {
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
+}
+
+.education_title h2 {
+  font-weight: bold;
+  font-size: clamp(30px, 3vw, 70px);
+}
+
+.education_list {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 15px;
+}
+
+.education_list h3 {
+  font-size: clamp(20px, 2.5vw, 50px);
+  letter-spacing: 1px;
+}
+
+.education_list p {
+  font-size: clamp(15px, 1.5vw, 30px);
+  letter-spacing: 1px;
+}
+
+/*ABOUT ME*/
+
+/*SKILLS*/
+#skills {
+  background-color: #34495e;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='16' viewBox='0 0 12 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 .99C4 .445 4.444 0 5 0c.552 0 1 .45 1 .99v4.02C6 5.555 5.556 6 5 6c-.552 0-1-.45-1-.99V.99zm6 8c0-.546.444-.99 1-.99.552 0 1 .45 1 .99v4.02c0 .546-.444.99-1 .99-.552 0-1-.45-1-.99V8.99z' fill='%232c3e50' fill-opacity='0.81' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+/*SKILLS*/
+
+/*CONTACT*/
+#contact {
+  background-color: #34495e;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='199' viewBox='0 0 100 199'%3E%3Cg fill='%232c3e50' fill-opacity='0.81'%3E%3Cpath d='M0 199V0h1v1.99L100 199h-1.12L1 4.22V199H0zM100 2h-.12l-1-2H100v2z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+}
+
+#contact .page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1.5fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "title title"
+    "location github-social"
+    "phone gitlab-social"
+    "mail linkedin-social";
+  align-items: center;
+  justify-content: center;
+  color: whitesmoke;
+  width: 100%;
+  height: 80%;
+  text-align: center;
+}
+
+.title {
+  grid-area: title;
+}
+
+.location {
+  grid-area: location;
+  align-items: center;
+  justify-content: center;
+}
+
+#contact .page div > p {
+  font-size: 30px;
+}
+
+#contact .page div i:hover {
+  color: orangered;
+}
+
+.phone {
+  grid-area: phone;
+}
+
+.mail {
+  grid-area: mail;
+}
+
+.github-social {
+  grid-area: github-social;
+}
+
+.gitlab-social {
+  grid-area: gitlab-social;
+}
+
+.linkedin-social {
+  grid-area: linkedin-social;
+}
+
+#contact a {
+  color: whitesmoke;
+}
+/*CONTACT*/

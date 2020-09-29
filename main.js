@@ -1,40 +1,27 @@
-const navSlide = () => {
-    const burger = document.querySelector(".burger");
-    const nav = document.querySelector(".nav-links");
-    const navLinks = document.querySelectorAll(".nav-links li");
-    //Toggle Nav
-    burger.addEventListener("click", () => {
-        nav.classList.toggle("nav-active");
+const menuBtn = document.querySelector(".menu-btn");
+const menuItems = document.querySelector(".menu-items");
+const menuItem = document.querySelectorAll(".menu-item");
 
-        //Animated Links
-        navLinks.forEach((link, index) => {
-            if (link.style.animation) {
-                link.style.animation = "";
-            } else {
-                link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5
-                    }s`;
-            }
-        });
+//MAIN TOGGLE
 
-        //Burger animation
-        burger.classList.toggle('toggle');
+menuBtn.addEventListener("click", () => {
+    toggle();
+});
+
+menuItem.forEach ((item) => {
+    item.addEventListener("click", () => {
+        if (menuBtn.classList.contains("open")) {
+            toggle();
+        }
     });
-};
-
-navSlide();
+});
 
 
 
-const navClose = () => {
-    const burger = document.querySelector(".burger");
-    const nav = document.querySelector(".nav-links");
-    const navLinks = document.querySelectorAll(".nav-links li");
+function toggle() {
+    menuBtn.classList.toggle("open");
+    menuItems.classList.toggle("open");
+}
 
-    navLinks.addEventListener("click", () => {
-        burger.classList.toggle('nav-active');
-    });
 
-    
-};
 
-navClose();
